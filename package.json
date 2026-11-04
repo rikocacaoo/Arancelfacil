@@ -1,0 +1,14 @@
+{
+  "name": "arancelfacil",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "indice": "node scripts/generar-indice.js",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

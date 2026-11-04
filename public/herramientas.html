@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Herramientas | ArancelFácil</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-icono-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/herramientas.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="ArancelFácil"><picture><source media="(prefers-color-scheme: dark)" srcset="img/logo-horizontal-blanco.svg"><img src="img/logo-horizontal.svg" alt="ArancelFácil" height="30"></picture></a>
+    <nav><a href="index.html">Buscador</a><a href="explorar.html">Explorar</a><a href="calculadora.html">Importación</a><a href="exportar.html">Exportación</a><a href="herramientas.html">Herramientas</a></nav>
+  </header>
+  <section class="hero mini">
+    <h1>Herramientas para tu operación</h1>
+    <p class="sub">Carga de contenedores, precio de venta, Incoterms y validadores.</p>
+  </section>
+  <main class="herr">
+    <div class="seg" id="tabs"><button data-t="carga" class="on">Carga y CBM</button><button data-t="precio">Precio de venta</button><button data-t="inco">Incoterms</button><button data-t="valida">Validadores</button></div>
+
+    <section class="panel-h on" id="p-carga"><div class="card">
+      <h2>Carga, CBM y contenedores</h2><p class="mini">Con las medidas de una caja calcula volumen, peso volumétrico aéreo y cuántos contenedores necesitas.</p>
+      <div class="fila2"><label>Largo (cm)<input id="l" type="number" min="0" value="60"></label><label>Ancho (cm)<input id="a" type="number" min="0" value="40"></label><label>Alto (cm)<input id="h" type="number" min="0" value="40"></label></div>
+      <div class="fila2"><label>Peso por caja (kg)<input id="kg" type="number" min="0" step="0.1" value="12"></label><label>N.º de cajas<input id="n" type="number" min="1" value="800"></label><label>Estiba útil (%)<input id="ef" type="number" min="50" max="100" value="85"></label></div>
+      <div class="res" id="r-carga"></div>
+    </div></section>
+
+    <section class="panel-h" id="p-precio"><div class="card">
+      <h2>Precio de venta y margen</h2><p class="mini">Parte de tu costo puesto en almacén (lo obtienes en la calculadora de importación) y define a cuánto vender.</p>
+      <div class="fila2"><label>Costo unitario (USD o S/)<input id="c" type="number" min="0" step="0.01" value="10.67"></label><label>Margen deseado (% del precio)<input id="m" type="number" min="0" value="30"></label></div>
+      <div class="fila2"><label>Comisiones y publicidad (% del precio)<input id="cm" type="number" min="0" value="8"></label><label>IGV de venta (%)<input id="ig" type="number" min="0" value="18"></label></div>
+      <div class="fila2"><label>Gastos fijos del periodo<input id="gf" type="number" min="0" value="1500"></label><label>Unidades a vender<input id="u" type="number" min="0" value="400"></label></div>
+      <div class="res" id="r-precio"></div>
+    </div></section>
+
+    <section class="panel-h" id="p-inco"><div class="card">
+      <h2>Incoterms 2020</h2><p class="mini">Quién paga y quién asume cada tramo. <span class="v">Vendedor</span> · <span class="c">Comprador</span>. En el Perú el valor en aduana de una importación se calcula sobre el CIF (incluye flete y seguro).</p>
+      <div class="scroll-x res"><table class="inco" id="t-inco"></table></div>
+    </div></section>
+
+    <section class="panel-h" id="p-valida"><div class="card">
+      <h2>Validadores</h2><p class="mini">Detecta errores de digitación antes de enviar un documento.</p>
+      <div class="fila2"><label>RUC (11 dígitos)<input id="ruc" inputmode="numeric" maxlength="11" placeholder="20131312955"></label><label>N.º de contenedor<input id="cont" maxlength="13" placeholder="CSQU3054383"></label></div>
+      <div class="res" id="r-valida">Escribe un RUC o un número de contenedor.</div>
+      <p class="consejo">Solo se valida el dígito verificador. Para saber si un RUC está activo y habido, consúltalo en <a href="https://www.sunat.gob.pe" target="_blank" rel="noopener">sunat.gob.pe</a>.</p>
+    </div></section>
+  </main>
+  <footer>Herramientas orientativas: confirma valores y requisitos con tu agente de aduanas.</footer>
+  <script src="js/cuenta.js"></script>
+  <script src="js/herramientas.js"></script>
+</body>
+</html>

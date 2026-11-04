@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explorar el arancel | ArancelFácil</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-icono-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/herramientas.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="ArancelFácil"><picture><source media="(prefers-color-scheme: dark)" srcset="img/logo-horizontal-blanco.svg"><img src="img/logo-horizontal.svg" alt="ArancelFácil" height="30"></picture></a>
+    <nav><a href="index.html">Buscador</a><a href="explorar.html">Explorar</a><a href="calculadora.html">Importación</a><a href="exportar.html">Exportación</a><a href="herramientas.html">Herramientas</a></nav>
+  </header>
+  <section class="hero mini">
+    <h1>Explora el arancel</h1>
+    <p class="sub">Navega por secciones, capítulos y partidas, o busca por código o palabra.</p>
+  </section>
+  <main class="expl">
+    <form class="busca" id="f"><input id="q" placeholder="Código (6109.10) o palabra (camisetas)" autocomplete="off"><button class="guardar" type="submit">Buscar</button></form>
+    <nav class="migas" id="migas"></nav>
+    <div id="vista"></div>
+  </main>
+  <footer>Arancel de Aduanas 2022 (D.S. 404-2021-EF). Herramienta orientativa.</footer>
+  <script src="js/estructura_data.js"></script>
+  <script src="js/arancel_data.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/explorar.js"></script>
+</body>
+</html>

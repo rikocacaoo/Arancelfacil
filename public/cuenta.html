@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi espacio | ArancelFácil</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-icono-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="ArancelFácil"><picture><source media="(prefers-color-scheme: dark)" srcset="img/logo-horizontal-blanco.svg"><img src="img/logo-horizontal.svg" alt="ArancelFácil" height="30"></picture></a>
+    <nav><a href="index.html">Buscador</a><a href="explorar.html">Explorar</a><a href="calculadora.html">Importación</a><a href="exportar.html">Exportación</a><a href="herramientas.html">Herramientas</a></nav>
+  </header>
+  <section class="hero mini">
+    <h1 id="saludo">Mi espacio</h1>
+    <p class="sub" id="sub"></p>
+  </section>
+  <main class="espacio">
+    <div class="card centro" id="bloqueo" hidden>
+      <h2>🔒 Tu espacio personal</h2>
+      <p class="mini">Inicia sesión o crea una cuenta gratis para guardar productos, ver tu historial, guardar cotizaciones y exportarlas a Excel.</p>
+      <button class="btn" id="b-entrar" style="max-width:260px">Iniciar sesión</button>
+    </div>
+    <div id="contenido" hidden>
+      <div class="seg" id="tabs">
+        <button data-t="productos">Mis productos <i></i></button><button data-t="historial">Historial <i></i></button><button data-t="cotizaciones">Cotizaciones <i></i></button>
+      </div>
+      <div class="barra-esp"><span></span><span><button class="btn-sec" id="b-csv">Exportar a Excel (CSV)</button> <button class="btn-sec" id="b-salir">Cerrar sesión</button></span></div>
+      <div id="lista"></div>
+    </div>
+  </main>
+  <footer>Tus datos se guardan solo en este navegador (modo demostración).</footer>
+  <script src="js/cuenta.js"></script>
+  <script src="js/espacio.js"></script>
+  <script src="js/efectos.js"></script>
+</body>
+</html>

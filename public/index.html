@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArancelFácil | Encuentra la partida arancelaria de tu producto</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-icono-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="ArancelFácil"><picture><source media="(prefers-color-scheme: dark)" srcset="img/logo-horizontal-blanco.svg"><img src="img/logo-horizontal.svg" alt="ArancelFácil" height="30"></picture></a>
+    <nav><a href="#buscador">Buscador</a><a href="#historia">Cómo funciona</a><a href="explorar.html">Explorar</a><a href="calculadora.html">Importación</a><a href="exportar.html">Exportación</a><a href="herramientas.html">Herramientas</a></nav>
+  </header>
+
+  <section class="hero" id="buscador">
+    <h1>Describe tu producto.<br><span class="grad">Te damos su partida arancelaria.</span></h1>
+    <p class="sub">Escribe como hablas. Te haremos unas preguntas cortas para acertar con el código correcto.</p>
+
+    <form id="form" class="search">
+      <input id="q" type="text" placeholder="Ej: polo de manga corta de algodón" autocomplete="off" required>
+      <button type="submit">Buscar partida</button>
+    </form>
+    <div class="ejemplos">Prueba con:
+      <button type="button" data-q="polo de manga corta de algodón">polo de algodón</button>
+      <button type="button" data-q="zapatillas deportivas de cuero">zapatillas</button>
+      <button type="button" data-q="café tostado en grano">café tostado</button>
+    </div>
+    <p class="iaestado" id="ia-estado" hidden>✨ Búsqueda inteligente activada: escribe tu producto con tus palabras</p>
+  </section>
+
+  <main class="panel" id="panel" hidden>
+    <div class="card" id="pregunta" hidden>
+      <div class="progreso"><div id="barra"></div></div>
+      <p class="mini" id="contador"></p>
+      <p class="ianota" id="ia-nota" hidden></p>
+      <h2 id="pregunta-texto"></h2>
+      <div class="opciones" id="opciones"></div>
+    </div>
+    <div id="resultado" hidden></div>
+  </main>
+
+  <section class="story" id="historia">
+    <div class="story-sticky">
+      <div class="story-col">
+        <h2 class="story-h">Así de simple.</h2>
+        <ol class="story-text">
+          <li class="activo"><h3>Describe</h3><p>Cuéntanos qué es tu producto con tus propias palabras.</p></li>
+          <li><h3>Responde</h3><p>Solo preguntamos lo que distingue una partida de otra: tejido, material, tipo de prenda.</p></li>
+          <li><h3>Recibe tu código</h3><p>Partida de 10 dígitos, derecho Ad Valorem y el camino completo del arancel.</p></li>
+        </ol>
+      </div>
+      <div class="mock" id="mock" data-estado="0">
+        <div class="mock-barra"><i></i><i></i><i></i></div>
+        <div class="pantalla p0"><small>Describe tu producto</small><div class="campo">polo de manga corta de algodón<span class="cursor"></span></div></div>
+        <div class="pantalla p1"><small>¿Cuál describe mejor tu producto?</small><div class="op sel">61.09 · «T-shirts» y camisetas, de punto.</div><div class="op">61.05 · Camisas de punto para hombres o niños.</div><div class="op">62.05 · Camisas para hombres o niños.</div></div>
+        <div class="pantalla p2"><span class="badge">Confianza alta</span><div class="codigo">6109.10.00.31</div><p>De tejido teñido de un solo color uniforme</p><p class="mini">Ad Valorem 11%</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cifras">
+    <div class="cifra"><b data-n="subpartidas">0</b><span>subpartidas nacionales</span></div>
+    <div class="cifra"><b data-n="capitulos">0</b><span>capítulos</span></div>
+    <div class="cifra"><b data-n="secciones">0</b><span>secciones</span></div>
+  </section>
+
+  <section class="bento">
+    <h2>Todo en un solo lugar</h2>
+    <div class="bento-grid">
+      <a class="tile t1" href="#buscador"><small>Buscador</small><h3>Encuentra tu partida arancelaria.</h3><p>Describe tu producto y responde unas preguntas cortas.</p></a>
+      <a class="tile t2" href="calculadora.html"><small>Importación</small><h3>Calcula tu costo.</h3><p>Ad Valorem, ISC, IGV, IPM y percepción.</p></a>
+      <a class="tile t3" href="exportar.html"><small>Exportación</small><h3>Tu precio FOB.</h3><p>Desde el costo en fábrica hasta cotizar.</p></a>
+      <a class="tile t4" href="cuenta.html"><small>Con cuenta gratis</small><h3>Mi espacio.</h3><p>Guarda productos y cotizaciones, consulta tu historial, lee las notas legales y exporta a Excel o PDF.</p></a>
+      <a class="tile t5" href="explorar.html"><small>Nuevo</small><h3>Explora el arancel.</h3><p>Secciones, capítulos, partidas y notas legales, con enlaces para compartir.</p></a>
+      <a class="tile t6" href="herramientas.html"><small>Nuevo</small><h3>Herramientas.</h3><p>Contenedores y CBM, precio de venta, Incoterms y validadores.</p></a>
+    </div>
+  </section>
+
+  <footer>Herramienta orientativa basada en el Arancel de Aduanas 2022 (D.S. 404-2021-EF). La clasificación definitiva la valida tu agente de aduanas o SUNAT.</footer>
+
+  <script src="js/estructura_data.js"></script>
+  <script src="js/arancel_data.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/efectos.js"></script>
+</body>
+</html>

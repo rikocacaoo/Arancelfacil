@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de importación | ArancelFácil</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/logo-icono-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="ArancelFácil"><picture><source media="(prefers-color-scheme: dark)" srcset="img/logo-horizontal-blanco.svg"><img src="img/logo-horizontal.svg" alt="ArancelFácil" height="30"></picture></a>
+    <nav><a href="index.html">Buscador</a><a href="explorar.html">Explorar</a><a href="calculadora.html">Importación</a><a href="exportar.html">Exportación</a><a href="herramientas.html">Herramientas</a></nav>
+  </header>
+
+  <section class="hero mini">
+    <h1>Calcula cuánto te cuesta importar</h1>
+    <p class="sub">Desde el FOB hasta el desembolso total: derechos, IGV, IPM y costo por unidad.</p>
+  </section>
+
+  <main class="calc">
+    <form class="card" id="datos" onsubmit="return false">
+      <h2>1. Tu producto</h2>
+      <div class="buscar">
+        <input id="bus" type="text" placeholder="Código o descripción (ej: 6109.10 o camisetas)" autocomplete="off">
+        <ul id="lista" hidden></ul>
+      </div>
+      <p class="elegido" id="elegido">Aún no eliges una partida. También puedes escribir el derecho a mano.</p>
+      <label>Derecho Ad Valorem (%)<input id="av" type="number" min="0" step="0.1" value="0"></label>
+
+      <h2>2. Valor de la compra (USD)</h2>
+      <div class="fila">
+        <label>Cantidad (unidades)<input id="cant" type="number" min="1" step="1" value="100"></label>
+        <label>Precio unitario FOB<input id="precio" type="number" min="0" step="0.01" value="5"></label>
+      </div>
+      <div class="fila">
+        <label>Flete internacional<input id="flete" type="number" min="0" step="0.01" value="300"></label>
+        <label>Seguro<input id="seguro" type="number" min="0" step="0.01" value="10"></label>
+      </div>
+      <label>Otros gastos en destino (agente, almacén, transporte)<input id="otros" type="number" min="0" step="0.01" value="150"></label>
+
+      <h2>3. Impuestos <small>(editables por si cambian)</small></h2>
+      <div class="fila">
+        <label>IGV (%)<input id="igv" type="number" min="0" step="0.1" value="16"></label>
+        <label>IPM (%)<input id="ipm" type="number" min="0" step="0.1" value="2"></label>
+        <label>Percepción IGV
+          <select id="perc"><option value="0">No aplica</option><option value="3.5">3.5%</option><option value="5">5%</option><option value="10">10%</option></select>
+        </label>
+      </div>
+      <div class="fila">
+        <label>ISC (%) <small>sobre CIF + derechos</small><input id="isc" type="number" min="0" step="0.1" value="0"></label>
+        <label>Antidumping / compensatorio (% FOB)<input id="adump" type="number" min="0" step="0.1" value="0"></label>
+      </div>
+      <p class="nota">El ISC y los derechos antidumping dependen del producto y del país de origen: consúltalos en SUNAT o con tu agente y escribe aquí el porcentaje que corresponda.</p>
+    </form>
+
+    <aside class="card resumen" id="resumen">
+      <h2>Resultado</h2>
+      <div class="total"><span>Desembolso total</span><b id="r-total">$0</b></div>
+      <div class="unit"><span>Costo por unidad puesto en almacén</span><b id="r-unit">$0</b></div>
+      <div class="barra" id="barra-c"></div>
+      <div class="leyenda" id="leyenda"></div>
+      <table id="tabla"></table>
+      <div class="acciones"><button class="btn-sec" id="b-guardar" data-pro>Guardar cotización</button><button class="btn-sec" id="b-imprimir" data-pro>Imprimir / PDF</button></div>
+      <p class="aviso">Cálculo referencial. No incluye derechos específicos ni sobretasas. Verifica con tu agente de aduanas.</p>
+    </aside>
+  </main>
+
+  <footer>Herramienta orientativa basada en el Arancel de Aduanas 2022 (D.S. 404-2021-EF).</footer>
+
+  <script src="js/arancel_data.js"></script>
+  <script src="js/cuenta.js"></script>
+  <script src="js/calculadora.js"></script>
+  <script src="js/efectos.js"></script>
+</body>
+</html>
